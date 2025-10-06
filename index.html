@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice Roller</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <h1>Dice Roller</h1>
+    <p>Click "Roll Dice" or press Enter to roll five 6-sided dice.</p>
+  </header>
+
+  <main>
+    <section class="dice-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Die 1</th>
+            <th>Die 2</th>
+            <th>Die 3</th>
+            <th>Die 4</th>
+            <th>Die 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" id="die1" readonly></td>
+            <td><input type="text" id="die2" readonly></td>
+            <td><input type="text" id="die3" readonly></td>
+            <td><input type="text" id="die4" readonly></td>
+            <td><input type="text" id="die5" readonly></td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="rollBtn" autofocus>Roll Dice</button>
+    </section>
+  </main>
+
+  <script src="dice_Roller.js"></script>
+  <script>
+    window.onload = rollDice;
+    document.getElementById('rollBtn').addEventListener('click', rollDice);
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Enter") {
+        document.getElementById('rollBtn').click();
+      }
+    });
+  </script>
+</body>
+</html>
